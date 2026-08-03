@@ -1,0 +1,340 @@
+/* =========================
+   VARIABLES GLOBALES
+========================= */
+
+:root {
+    /* Colores */
+    --color-primario: #1e40af;
+    --color-secundario: #3b82f6;
+    --color-texto: #01050f;
+    --color-activo: #60a5fa;
+    --color-desactivo: #cbd5e1;
+
+    /* Espaciados */
+    --padding: 10px;
+    --padding-grande: 20px;
+    --margin: 20px;
+
+    /* Estilos visuales */
+    --radio: 12px;
+    --sombra: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================
+   ESTILOS GENERALES
+========================= */
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(to bottom, #dbeafe, #93c5fd);
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+/* Tipografias dobles */
+h1, h2, h3 {
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+    text-align: center;
+    color: #01050f;
+}
+
+h2 {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    color: var(--color-texto);
+    font-size: 1.6rem;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-secundario);
+    margin: 8px auto 0;
+    border-radius: 5px;
+}
+
+/* =========================
+   FORMULARIO 
+========================= */
+.contacto {
+    text-align: center;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+form label {
+    display: block;
+    text-align: left;
+    margin-top: 10px;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    margin-top: 15px;
+    width: 100%;
+    background-color: #0077cc;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #005fa3;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: var(--color-primario);
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: var(--padding);
+    margin: 0;
+}
+
+.navbar li {
+    margin: 0 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: var(--radio);
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    background-color: var(--color-secundario);
+}
+
+/* =========================
+   CONTENEDOR GENERAL
+========================= */
+
+.contenedor {
+    max-width: 800px;
+    margin: 60px auto;
+    background-color: rgba(255, 255, 255, 0.25);
+    padding: var(--padding-grande);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: var(--sombra);
+}
+
+section {
+    padding: var(--padding-grande);
+}
+
+/* =========================
+   DATOS PERSONALES
+========================= */
+
+.datos-personales {
+    text-align: center;
+}
+
+.datos-personales img {
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 3px solid var(--color-primario);
+    box-shadow: var(--sombra);
+}
+
+/* =========================
+   SOBRE MI + HABILIDADES
+========================= */
+
+.sobre-mi {
+    text-align: center;
+}
+
+.sobre-mi p {
+    max-width: 600px;
+    margin: 10px auto;
+}
+
+.habilidades {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.habilidades ul {
+    list-style: none;
+    padding: 0;
+}
+
+.habilidades li {
+    background-color: rgba(59, 130, 246, 0.2);
+    margin: 8px auto;
+    padding: var(--padding);
+    border-radius: var(--radio);
+    width: 200px;
+}
+
+/* =========================
+   EXPERIENCIA
+========================= */
+
+.experiencia {
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    max-width: 700px;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+th {
+    background: var(--color-primario);
+    color: white;
+    padding: var(--padding-grande);
+}
+
+td {
+    padding: var(--padding);
+    text-align: center;
+    border-bottom: 1px solid var(--color-desactivo);
+}
+
+tr:hover {
+    background-color: rgba(59, 130, 246, 0.2);
+    transition: 0.3s;
+}
+
+/* =========================
+   EDUCACION
+========================= */
+
+.educacion {
+    text-align: center;
+}
+
+.item-educacion {
+    margin: 20px auto;
+    padding: var(--padding-grande);
+    border-radius: var(--radio);
+    background-color: rgba(59, 130, 246, 0.2);
+    max-width: 500px;
+    box-shadow: var(--sombra);
+}
+
+.item-educacion h3 {
+    margin-bottom: 5px;
+    color: var(--color-texto);
+}
+
+.fecha {
+    font-size: 14px;
+    color: var(--color-secundario);
+}
+
+/* =========================
+   IDIOMAS
+========================= */
+
+.idiomas {
+    text-align: center;
+}
+
+.idioma {
+    margin: 20px auto;
+    max-width: 400px;
+}
+
+.barra {
+    width: 100%;
+    height: 10px;
+    background-color: var(--color-desactivo);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.nivel {
+    height: 100%;
+    border-radius: 10px;
+}
+
+.nativo {
+    width: 100%;
+    background-color: var(--color-primario);
+}
+
+.basico {
+    width: 50%;
+    background-color: var(--color-secundario);
+}
+
+/* =========================
+   CONTACTO
+========================= */
+
+.contacto {
+    text-align: center;
+}
+
+.item-contacto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 15px auto;
+    padding: var(--padding);
+    max-width: 400px;
+    border-radius: var(--radio);
+    background-color: rgba(59, 130, 246, 0.2);
+}
+
+.item-contacto a {
+    text-decoration: none;
+    color: var(--color-primario);
+    font-weight: 500;
+}
+
+.item-contacto a:hover {
+    text-decoration: underline;
+}
+
+.item-contacto span {
+    font-size: 18px;
+}
