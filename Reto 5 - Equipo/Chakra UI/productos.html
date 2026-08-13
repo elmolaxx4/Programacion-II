@@ -183,7 +183,10 @@
                 h(
                     Box,
                     {
-                        p: 6
+                        p: 6,
+                        minH: "260px",
+                        display: "flex",
+                        flexDirection: "column"
                     },
 
                     h(
@@ -225,6 +228,7 @@
                             bg: "#0284c7",
                             color: "white",
                             size: "md",
+                            mt: "auto",
                             _hover: {
                                 bg: "#0369a1"
                             }
@@ -320,7 +324,7 @@
                     h(ProductCard, {
                         image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800",
                         title: "Auriculares Sony",
-                        description: "Sonido envolvente y batería de larga duración.",
+                        description: "Sonido envolvente y batería de larga duración. Disfrutá de una experiencia cómoda.",
                         price: "$89.999"
                     }),
 
@@ -341,7 +345,7 @@
                     h(ProductCard, {
                         image: "https://images.unsplash.com/photo-1527814050087-3793815479db?w=800",
                         title: "Mouse Gamer",
-                        description: "Alta precisión y respuesta rápida para gaming.",
+                        description: "Alta precisión y respuesta rápida para gaming. Diseño ergonómico ideal para juegos.",
                         price: "$39.999"
                     })
                 )
