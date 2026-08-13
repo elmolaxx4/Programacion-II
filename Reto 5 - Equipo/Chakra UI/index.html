@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TechClub | Inicio</title>
+
+
+    <!-- =====================================================
+         IMPORT MAP
+         ===================================================== -->
+
+    <script type="importmap">
+    {
+        "imports": {
+            "react": "https://esm.sh/react@18.2.0",
+            "react-dom": "https://esm.sh/react-dom@18.2.0",
+            "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
+            "react/jsx-runtime": "https://esm.sh/react@18.2.0/jsx-runtime",
+            "react/jsx-dev-runtime": "https://esm.sh/react@18.2.0/jsx-dev-runtime"
+        }
+    }
+    </script>
+
+</head>
+
+
+<body style="margin: 0; background: #e2e8f0;">
+
+    <!-- Punto donde React va a montar la aplicación -->
+    <div id="root"></div>
+
+
+    <!-- =====================================================
+         APLICACIÓN REACT + CHAKRA UI
+         ===================================================== -->
+
+    <script type="module">
+
+        import React from "react";
+        import { createRoot } from "react-dom/client";
+
+        import {
+            ChakraProvider,
+            Box,
+            Flex,
+            Link,
+            Heading,
+            Text,
+            Image,
+            Button,
+            SimpleGrid
+        } from "https://esm.sh/@chakra-ui/react@2.10.4?external=react,react-dom";
+
+
+        /*
+         * Alias para crear elementos de React
+         */
+        const h = React.createElement;
+
+
+        /* =====================================================
+           HEADER
+           ===================================================== */
+
+        function Header() {
+
+            return h(
+                Box,
+                {
+                    as: "header",
+                    bg: "#0f172a",
+                    color: "white",
+                    boxShadow: "lg",
+                    position: "sticky",
+                    top: 0,
+                    zIndex: 50
+                },
+
+                h(
+                    Flex,
+                    {
+                        maxW: "7xl",
+                        mx: "auto",
+                        justify: "space-between",
+                        align: "center",
+                        px: 5,
+                        height: "77px"
+                    },
+
+                    h(
+                        Link,
+                        {
+                            href: "index.html",
+                            fontSize: "3xl",
+                            fontWeight: "extrabold",
+                            letterSpacing: "wide",
+                            _hover: {
+                                color: "blue.300",
+                                textDecoration: "none"
+                            }
+                        },
+                        "TechClub"
+                    ),
+
+                    h(
+                        Flex,
+                        {
+                            as: "nav",
+                            gap: 8,
+                            fontWeight: "medium",
+                            fontSize: "lg",
+                            "aria-label": "Navegación principal"
+                        },
+
+                        h(
+                            Link,
+                            {
+                                href: "index.html",
+                                color: "blue.300",
+                                _hover: {
+                                    color: "blue.200",
+                                    textDecoration: "none"
+                                }
+                            },
+                            "Inicio"
+                        ),
+
+                        h(
+                            Link,
+                            {
+                                href: "productos.html",
+                                _hover: {
+                                    color: "blue.300",
+                                    textDecoration: "none"
+                                }
+                            },
+                            "Productos"
+                        ),
+
+                        h(
+                            Link,
+                            {
+                                href: "contacto.html",
+                                _hover: {
+                                    color: "blue.300",
+                                    textDecoration: "none"
+                                }
+                            },
+                            "Contacto"
+                        )
+                    )
+                )
+            );
+        }
+
+
+        /* =====================================================
+           HERO
+           ===================================================== */
+
+        function Hero() {
+
+            return h(
+                Box,
+                {
+                    position: "relative",
+                    height: {
+                        base: "288px",
+                        md: "500px"
+                    }
+                },
+
+                h(Image, {
+                    src: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1600",
+                    alt: "Tecnología",
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover"
+                }),
+
+                h(
+                    Flex,
+                    {
+                        position: "absolute",
+                        inset: 0,
+                        bg: "rgba(15, 23, 42, 0.70)",
+                        direction: "column",
+                        justify: "center",
+                        align: "center",
+                        textAlign: "center",
+                        color: "white",
+                        px: 6
+                    },
+
+                    h(
+                        Heading,
+                        {
+                            fontSize: {
+                                base: "5xl",
+                                md: "6xl"
+                            },
+                            fontWeight: "extrabold"
+                        },
+                        "Bienvenido a TechClub"
+                    ),
+
+                    h(
+                        Text,
+                        {
+                            mt: 6,
+                            fontSize: {
+                                base: "lg",
+                                md: "xl"
+                            },
+                            maxW: "2xl",
+                            lineHeight: "relaxed"
+                        },
+                        "Descubrí celulares, notebooks, auriculares y mucho más. La mejor tecnología al mejor precio con envíos a todo el país."
+                    ),
+
+                    h(
+                        Flex,
+                        {
+                            wrap: "wrap",
+                            justify: "center",
+                            gap: 4,
+                            mt: 8
+                        },
+
+                        h(
+                            Button,
+                            {
+                                as: "a",
+                                href: "productos.html",
+                                bg: "#0284c7",
+                                color: "white",
+                                size: "lg",
+                                boxShadow: "lg",
+                                _hover: {
+                                    bg: "#0369a1"
+                                }
+                            },
+                            "Ver productos"
+                        ),
+
+                        h(
+                            Button,
+                            {
+                                as: "a",
+                                href: "contacto.html",
+                                size: "lg",
+                                variant: "outline",
+                                color: "white",
+                                borderColor: "white",
+                                _hover: {
+                                    bg: "white",
+                                    color: "gray.800"
+                                }
+                            },
+                            "Contactanos"
+                        )
+                    )
+                )
+            );
+        }
+
+
+        /* =====================================================
+           CARD DE PRODUCTO
+           ===================================================== */
+
+        function ProductCard({ image, title, description }) {
+
+            return h(
+                Box,
+                {
+                    bg: "white",
+                    borderRadius: "xl",
+                    boxShadow: "lg",
+                    overflow: "hidden",
+                    transition: "0.2s",
+                    _hover: {
+                        transform: "translateY(-8px)"
+                    }
+                },
+
+                h(Image, {
+                    src: image,
+                    alt: title,
+                    width: "100%",
+                    height: "224px",
+                    objectFit: "cover"
+                }),
+
+                h(
+                    Box,
+                    {
+                        p: 6
+                    },
+
+                h(
+                    "h3",
+                    {
+                        style: {
+                            fontSize: "24px",
+                            fontWeight: "700",
+                            color: "#020617",
+                            marginBottom: "12px"
+                        }
+                    },
+                    title
+                ),
+
+                    h(
+                        Text,
+                        {
+                            color: "gray.600",
+                            mb: 5
+                        },
+                        description
+                    ),
+
+                    h(
+                        Link,
+                        {
+                            href: "productos.html",
+                            color: "blue.600",
+                            fontWeight: "semibold",
+                            _hover: {
+                                color: "blue.800",
+                                textDecoration: "none"
+                            }
+                        },
+                        "Ver más →"
+                    )
+                )
+            );
+        }
+
+
+        /* =====================================================
+           PRODUCTOS DESTACADOS
+           ===================================================== */
+
+        function ProductosDestacados() {
+
+            return h(
+                Box,
+                null,
+
+                h(
+                    "h2",
+                    {
+                        style: {
+                            textAlign: "center",
+                            fontSize: "36px",
+                            fontWeight: "700",
+                            color: "#020617",
+                            marginBottom: "48px"
+                        }
+                    },
+                    "Productos Destacados"
+                ),
+
+                h(
+                    SimpleGrid,
+                    {
+                        columns: {
+                            base: 1,
+                            md: 3
+                        },
+                        spacing: 8
+                    },
+
+                    h(ProductCard, {
+                        image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800",
+                        title: "Celulares",
+                        description: "Últimos modelos con gran rendimiento, cámaras profesionales y máxima velocidad."
+                    }),
+
+                    h(ProductCard, {
+                        image: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=800",
+                        title: "Notebooks",
+                        description: "Equipos potentes para estudiar, trabajar y jugar sin límites."
+                    }),
+
+                    h(ProductCard, {
+                        image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800",
+                        title: "Accesorios",
+                        description: "Auriculares, teclados, mouse y accesorios para completar tu setup."
+                    })
+                )
+            );
+        }
+
+
+        /* =====================================================
+           BENEFICIO
+           ===================================================== */
+
+       function Benefit({ icon, title, description }) {
+
+            return h(
+                Box,
+                {
+                    bg: "white",
+                    p: 8,
+                    borderRadius: "xl",
+                    boxShadow: "md",
+                    textAlign: "center"
+                },
+
+                h(
+                    Text,
+                    {
+                        fontSize: "4xl",
+                        mb: 3
+                    },
+                    icon
+                ),
+
+                h(
+                    "h3",
+                    {
+                        style: {
+                            fontSize: "20px",
+                            fontWeight: "700",
+                            color: "#020617",
+                            marginBottom: "12px"
+                        }
+                    },
+                    title
+                ),
+
+                h(
+                    Text,
+                    {
+                        color: "gray.600",
+                        fontSize: "md"
+                    },
+                    description
+                )
+            );
+        }
+
+
+        /* =====================================================
+           BENEFICIOS
+           ===================================================== */
+
+        function Beneficios() {
+
+            return h(
+                Box,
+                {
+                    mt: 20
+                },
+
+                h(
+                    Heading,
+                    {
+                        textAlign: "center",
+                        color: "gray.800",
+                        mb: 12,
+                        fontSize: "4xl"
+                    },
+                    "¿Por qué elegir TechClub?"
+                ),
+
+                h(
+                    SimpleGrid,
+                    {
+                        columns: {
+                            base: 1,
+                            md: 3
+                        },
+                        spacing: 8
+                    },
+
+                    h(Benefit, {
+                        icon: "🚚",
+                        title: "Envíos rápidos",
+                        description: "Recibí tus productos en cualquier punto del país de manera segura y rápida."
+                    }),
+
+                    h(Benefit, {
+                        icon: "🔒",
+                        title: "Compra segura",
+                        description: "Tus datos protegidos y métodos de pago confiables."
+                    }),
+
+                    h(Benefit, {
+                        icon: "⭐",
+                        title: "Calidad garantizada",
+                        description: "Trabajamos con marcas reconocidas y productos originales."
+                    })
+                )
+            );
+        }
+
+
+        /* =====================================================
+           CTA
+           ===================================================== */
+
+        function CTA() {
+
+            return h(
+                Box,
+                {
+                    mt: 20,
+                    bg: "#0284c7",
+                    borderRadius: "2xl",
+                    px: 8,
+                    py: 8,
+                    textAlign: "center",
+                    color: "white",
+                    boxShadow: "lg"
+                },
+
+                h(
+                    "h2",
+                    {
+                        style: {
+                            fontSize: "32px",
+                            fontWeight: "700",
+                            marginBottom: "20px"
+                        }
+                    },
+                    "Encontrá la tecnología que necesitás"
+                ),
+
+                h(
+                    Text,
+                    {
+                        fontSize: "lg",
+                        mb: 6
+                    },
+                    "Explorá nuestro catálogo completo y elegí tu próximo dispositivo."
+                ),
+
+                h(
+                    Button,
+                    {
+                        as: "a",
+                        href: "productos.html",
+                        bg: "white",
+                        color: "#0369a1",
+                        size: "md",
+                        fontWeight: "bold",
+                        _hover: {
+                            bg: "gray.100"
+                        }
+                    },
+                    "Explorar productos"
+                )
+            );
+        }
+
+
+        /* =====================================================
+           MAIN
+           ===================================================== */
+
+        function Main() {
+
+            return h(
+                Box,
+                {
+                    maxW: "7xl",
+                    mx: "auto",
+                    px: 6,
+                    py: 16
+                },
+
+                h(ProductosDestacados),
+
+                h(Beneficios),
+
+                h(CTA)
+            );
+        }
+
+
+        /* =====================================================
+           FOOTER
+           ===================================================== */
+
+        function Footer() {
+
+            return h(
+                Box,
+                {
+                    bg: "#0f172a",
+                    color: "white",
+                    mt: 20,
+                    minHeight: "220px"
+                },
+
+                h(
+                    Box,
+                    {
+                        maxW: "7xl",
+                        mx: "auto",
+                        px: 6,
+                        py: 8,
+                        textAlign: "center"
+                    },
+
+                    h(
+                        Heading,
+                        {
+                            size: "md",
+                            mb: 3
+                        },
+                        "TechClub"
+                    ),
+
+                    h(
+                        Text,
+                        {
+                            color: "gray.300"
+                        },
+                        "Tecnología, innovación y calidad en un solo lugar."
+                    ),
+
+                    h(
+                        Flex,
+                        {
+                            justify: "center",
+                            gap: 6,
+                            mt: 5
+                        },
+
+                        h(
+                            Link,
+                            {
+                                href: "index.html",
+                                _hover: {
+                                    color: "blue.300",
+                                    textDecoration: "none"
+                                }
+                            },
+                            "Inicio"
+                        ),
+
+                        h(
+                            Link,
+                            {
+                                href: "productos.html",
+                                _hover: {
+                                    color: "blue.300",
+                                    textDecoration: "none"
+                                }
+                            },
+                            "Productos"
+                        ),
+
+                        h(
+                            Link,
+                            {
+                                href: "contacto.html",
+                                _hover: {
+                                    color: "blue.300",
+                                    textDecoration: "none"
+                                }
+                            },
+                            "Contacto"
+                        )
+                    ),
+
+                    h(
+                        Text,
+                        {
+                            fontSize: "sm",
+                            color: "gray.400",
+                            mt: 6
+                        },
+                        "© 2026 TechClub. Todos los derechos reservados."
+                    )
+                )
+            );
+        }
+
+
+        /* =====================================================
+           APP
+           ===================================================== */
+
+        function App() {
+
+            return h(
+                ChakraProvider,
+
+                null,
+
+                h(
+                    Box,
+                    {
+                        bg: "#e2e8f0",
+                        minH: "100vh"
+                    },
+
+                    h(Header),
+
+                    h(Hero),
+
+                    h("main", null, h(Main)),
+
+                    h(Footer)
+
+                )
+            );
+        }
+
+
+        /* =====================================================
+           RENDER
+           ===================================================== */
+
+        const root = createRoot(
+            document.getElementById("root")
+        );
+
+        root.render(
+            h(App)
+        );
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TechClub | Contacto</title>
+
+
+    <!-- =====================================================
+         IMPORT MAP
+         ===================================================== -->
+
+    <script type="importmap">
+    {
+        "imports": {
+            "react": "https://esm.sh/react@18.2.0",
+            "react-dom": "https://esm.sh/react-dom@18.2.0",
+            "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
+            "react/jsx-runtime": "https://esm.sh/react@18.2.0/jsx-runtime",
+            "react/jsx-dev-runtime": "https://esm.sh/react@18.2.0/jsx-dev-runtime"
+        }
+    }
+    </script>
+
+</head>
+
+
+<body style="margin: 0; background: #e2e8f0;">
+
+    <div id="root"></div>
+
+
+    <!-- =====================================================
+         REACT + CHAKRA UI
+         ===================================================== -->
+
+    <script type="module">
+
+        import React from "react";
+        import { createRoot } from "react-dom/client";
+
+        import {
+            ChakraProvider,
+            Box,
+            Flex,
+            Link,
+            Heading,
+            Text,
+            Input,
+            Textarea,
+            Button,
+            SimpleGrid,
+            FormControl,
+            FormLabel
+        } from "https://esm.sh/@chakra-ui/react@2.10.4?external=react,react-dom";
+
+
+        const h = React.createElement;
+
+
+        /* =====================================================
+           HEADER
+           ===================================================== */
+
+        function Header() {
+
+            return h(
+                Box,
+                {
+                    as: "header",
+                    bg: "#0f172a",
+                    color: "white",
+                    boxShadow: "lg",
+                    position: "sticky",
+                    top: 0,
+                    zIndex: 50
+                },
+
+                h(
+                    Flex,
+                    {
+                        maxW: "7xl",
+                        mx: "auto",
+                        justify: "space-between",
+                        align: "center",
+                        px: 5,
+                        height: "77px"
+                    },
+
+                    h(
+                        Link,
+                        {
+                            href: "index.html",
+                            fontSize: "3xl",
+                            fontWeight: "extrabold",
+                            letterSpacing: "wide",
+                            _hover: {
+                                color: "blue.300",
+                                textDecoration: "none"
+                            }
+                        },
+                        "TechClub"
+                    ),
+
+                    h(
+                        Flex,
+                        {
+                            as: "nav",
+                            gap: 8,
+                            fontWeight: "medium",
+                            fontSize: "lg",
+                            "aria-label": "Navegación principal"
+                        },
+
+                        h(
+                            Link,
+                            {
+                                href: "index.html",
+                                _hover: {
+                                    color: "blue.300",
+                                    textDecoration: "none"
+                                }
+                            },
+                            "Inicio"
+                        ),
+
+                        h(
+                            Link,
+                            {
+                                href: "productos.html",
+                                _hover: {
+                                    color: "blue.300",
+                                    textDecoration: "none"
+                                }
+                            },
+                            "Productos"
+                        ),
+
+                        h(
+                            Link,
+                            {
+                                href: "contacto.html",
+                                color: "blue.300",
+                                _hover: {
+                                    color: "blue.200",
+                                    textDecoration: "none"
+                                }
+                            },
+                            "Contacto"
+                        )
+                    )
+                )
+            );
+        }
+
+
+        /* =====================================================
+           TITULO
+           ===================================================== */
+
+        function Titulo() {
+
+            return h(
+                Box,
+                {
+                    py: 16,
+                    textAlign: "center"
+                },
+
+                h(
+                    Heading,
+                    {
+                        fontSize: {
+                            base: "4xl",
+                            md: "5xl"
+                        },
+                        fontWeight: "extrabold",
+                        color: "gray.900"
+                    },
+                    "Contactanos"
+                ),
+
+                h(
+                    Text,
+                    {
+                        mt: 5,
+                        fontSize: "lg",
+                        color: "gray.600",
+                        maxW: "2xl",
+                        mx: "auto",
+                        px: 6
+                    },
+                    "¿Tenés alguna consulta? Escribinos y nuestro equipo te responderá."
+                )
+            );
+        }
+
+
+        /* =====================================================
+           FORMULARIO
+           ===================================================== */
+
+        function Formulario() {
+
+            return h(
+                Box,
+                {
+                    bg: "white",
+                    borderRadius: "xl",
+                    boxShadow: "lg",
+                    p: {
+                        base: 6,
+                        md: 8
+                    }
+                },
+
+                h(
+                    "form",
+                    null,
+
+                    h(
+                        FormControl,
+                        {
+                            mb: 6
+                        },
+
+                        h(
+                            FormLabel,
+                            {
+                                fontSize: "lg",
+                                fontWeight: "semibold"
+                            },
+                            "Nombre completo"
+                        ),
+
+                        h(Input, {
+                            type: "text",
+                            placeholder: "Ingresá tu nombre",
+                            size: "lg",
+                            focusBorderColor: "blue.500"
+                        })
+                    ),
+
+                    h(
+                        FormControl,
+                        {
+                            mb: 6
+                        },
+
+                        h(
+                            FormLabel,
+                            {
+                                fontSize: "lg",
+                                fontWeight: "semibold"
+                            },
+                            "Correo electrónico"
+                        ),
+
+                        h(Input, {
+                            type: "email",
+                            placeholder: "ejemplo@gmail.com",
+                            size: "lg",
+                            focusBorderColor: "blue.500"
+                        })
+                    ),
+
+                    h(
+                        FormControl,
+                        {
+                            mb: 6
+                        },
+
+                        h(
+                            FormLabel,
+                            {
+                                fontSize: "lg",
+                                fontWeight: "semibold"
+                            },
+                            "Mensaje"
+                        ),
+
+                        h(Textarea, {
+                            placeholder: "Escribí tu consulta...",
+                            rows: 5,
+                            size: "lg",
+                            focusBorderColor: "blue.500"
+                        })
+                    ),
+
+                    h(
+                        Button,
+                        {
+                            type: "submit",
+                            width: "100%",
+                            bg: "#0284c7",
+                            color: "white",
+                            size: "lg",
+                            fontWeight: "bold",
+                            _hover: {
+                                bg: "#0369a1"
+                            }
+                        },
+                        "Enviar mensaje"
+                    )
+                )
+            );
+        }
+
+
+        /* =====================================================
+           INFORMACION DE CONTACTO
+           ===================================================== */
+
+        function ContactCard({ icon, title, text }) {
+
+            return h(
+                Box,
+                {
+                    bg: "white",
+                    borderRadius: "xl",
+                    boxShadow: "md",
+                    p: 6,
+                    textAlign: "center"
+                },
+
+                h(
+                    Text,
+                    {
+                        fontSize: "4xl",
+                        mb: 3
+                    },
+                    icon
+                ),
+
+                h(
+                    Heading,
+                    {
+                        size: "md",
+                        mb: 2,
+                        color: "gray.900"
+                    },
+                    title
+                ),
+
+                h(
+                    Text,
+                    {
+                        color: "gray.600"
+                    },
+                    text
+                )
+            );
+        }
+
+
+        function InformacionContacto() {
+
+            return h(
+                SimpleGrid,
+                {
+                    columns: {
+                        base: 1,
+                        md: 3
+                    },
+                    spacing: 8,
+                    mt: 12
+                },
+
+                h(ContactCard, {
+                    icon: "📍",
+                    title: "Ubicación",
+                    text: "Buenos Aires, Argentina"
+                }),
+
+                h(ContactCard, {
+                    icon: "📧",
+                    title: "Email",
+                    text: "contacto@techclub.com"
+                }),
+
+                h(ContactCard, {
+                    icon: "📞",
+                    title: "Teléfono",
+                    text: "+54 9 11 5555-5555"
+                })
+            );
+        }
+
+
+        /* =====================================================
+           MAIN
+           ===================================================== */
+
+        function Main() {
+
+            return h(
+                Box,
+                {
+                    maxW: "4xl",
+                    mx: "auto",
+                    px: 6,
+                    pb: 16
+                },
+
+                h(Formulario),
+
+                h(InformacionContacto)
+            );
+        }
+
+
+        /* =====================================================
+           FOOTER
+           ===================================================== */
+
+        function Footer() {
+
+            return h(
+                Box,
+                {
+                    bg: "#0f172a",
+                    color: "white",
+                    mt: 20,
+                    minHeight: "220px"
+                },
+
+                h(
+                    Box,
+                    {
+                        maxW: "7xl",
+                        mx: "auto",
+                        px: 6,
+                        py: 8,
+                        textAlign: "center"
+                    },
+
+                    h(
+                        Heading,
+                        {
+                            size: "md",
+                            mb: 3
+                        },
+                        "TechClub"
+                    ),
+
+                    h(
+                        Text,
+                        {
+                            color: "gray.300"
+                        },
+                        "Tecnología, innovación y calidad en un solo lugar."
+                    ),
+
+                    h(
+                        Flex,
+                        {
+                            justify: "center",
+                            gap: 6,
+                            mt: 5
+                        },
+
+                        h(
+                            Link,
+                            {
+                                href: "index.html",
+                                _hover: {
+                                    color: "blue.300",
+                                    textDecoration: "none"
+                                }
+                            },
+                            "Inicio"
+                        ),
+
+                        h(
+                            Link,
+                            {
+                                href: "productos.html",
+                                _hover: {
+                                    color: "blue.300",
+                                    textDecoration: "none"
+                                }
+                            },
+                            "Productos"
+                        ),
+
+                        h(
+                            Link,
+                            {
+                                href: "contacto.html",
+                                _hover: {
+                                    color: "blue.300",
+                                    textDecoration: "none"
+                                }
+                            },
+                            "Contacto"
+                        )
+                    ),
+
+                    h(
+                        Text,
+                        {
+                            fontSize: "sm",
+                            color: "gray.400",
+                            mt: 6
+                        },
+                        "© 2026 TechClub. Todos los derechos reservados."
+                    )
+                )
+            );
+        }
+
+
+        /* =====================================================
+           APP
+           ===================================================== */
+
+        function App() {
+
+            return h(
+                ChakraProvider,
+                null,
+
+                h(
+                    Box,
+                    {
+                        bg: "#e2e8f0",
+                        minH: "100vh"
+                    },
+
+                    h(Header),
+
+                    h(Titulo),
+
+                    h("main", null, h(Main)),
+
+                    h(Footer)
+
+                )
+            );
+        }
+
+
+        /* =====================================================
+           RENDER
+           ===================================================== */
+
+        const root = createRoot(
+            document.getElementById("root")
+        );
+
+        root.render(
+            h(App)
+        );
+
+    </script>
+
+</body>
+
+</html>
