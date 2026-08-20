@@ -24,10 +24,12 @@
     }
     </script>
 
+    <link rel="stylesheet" href="css/estilos.css">
+
 </head>
 
 
-<body style="margin: 0; background: #e2e8f0;">
+<body>
 
     <div id="root"></div>
 
@@ -64,16 +66,16 @@
         function Header() {
 
             return h(
-                Box,
-                {
-                    as: "header",
-                    bg: "#0f172a",
-                    color: "white",
-                    boxShadow: "lg",
-                    position: "sticky",
-                    top: 0,
-                    zIndex: 50
-                },
+                    Box,
+                    {
+                        as: "header",
+                        bg: "#0f172a",
+                        color: "white",
+                        boxShadow: "lg",
+                        position: "sticky",
+                        top: 0,
+                        zIndex: 50
+                    },
 
                 h(
                     Flex,
@@ -364,13 +366,12 @@
         function Footer() {
 
             return h(
-                Box,
-                {
-                    bg: "#0f172a",
-                    color: "white",
-                    mt: 20,
-                    minHeight: "220px"
-                },
+                    Box,
+                    {
+                        className: "site-footer",
+                        mt: 20,
+                        minHeight: "220px"
+                    },
 
                 h(
                     Box,

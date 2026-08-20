@@ -1,0 +1,28 @@
+/* =========================
+   COLOR FONDO
+   ========================= */
+
+body {
+    margin: 0;
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+.site-header {
+    background-color: #0f172a;
+    color: white;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+.site-footer {
+    background-color: #0f172a;
+    color: white;
+}
