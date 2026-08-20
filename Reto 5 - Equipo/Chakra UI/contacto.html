@@ -8,7 +8,6 @@
 
     <title>TechClub | Contacto</title>
 
-
     <!-- =====================================================
          IMPORT MAP
          ===================================================== -->
@@ -372,7 +371,7 @@
                 h(ContactCard, {
                     icon: "📍",
                     title: "Ubicación",
-                    text: "Buenos Aires, Argentina"
+                    text: "Río Cuarto, Córdoba, Argentina"
                 }),
 
                 h(ContactCard, {
@@ -386,28 +385,6 @@
                     title: "Teléfono",
                     text: "+54 9 11 5555-5555"
                 })
-            );
-        }
-
-
-        /* =====================================================
-           MAIN
-           ===================================================== */
-
-        function Main() {
-
-            return h(
-                Box,
-                {
-                    maxW: "4xl",
-                    mx: "auto",
-                    px: 6,
-                    pb: 16
-                },
-
-                h(Formulario),
-
-                h(InformacionContacto)
             );
         }
 
@@ -509,6 +486,28 @@
                         "© 2026 TechClub. Todos los derechos reservados."
                     )
                 )
+            );
+        }
+
+        
+        /* =====================================================
+           MAIN
+           ===================================================== */
+
+        function Main() {
+
+            return h(
+                Box,
+                {
+                    maxW: "4xl",
+                    mx: "auto",
+                    px: 6,
+                    pb: 16
+                },
+
+                h(Formulario),
+
+                h(InformacionContacto)
             );
         }
 

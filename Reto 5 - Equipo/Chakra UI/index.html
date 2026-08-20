@@ -8,7 +8,6 @@
 
     <title>TechClub | Inicio</title>
 
-
     <!-- =====================================================
          IMPORT MAP
          ===================================================== -->
@@ -30,7 +29,7 @@
 
 <body style="margin: 0; background: #e2e8f0;">
 
-    <!-- Punto donde React va a montar la aplicación -->
+
     <div id="root"></div>
 
 
@@ -56,9 +55,6 @@
         } from "https://esm.sh/@chakra-ui/react@2.10.4?external=react,react-dom";
 
 
-        /*
-         * Alias para crear elementos de React
-         */
         const h = React.createElement;
 
 
@@ -504,7 +500,7 @@
 
 
         /* =====================================================
-           CTA
+           EXPLORAR PRODUCTOS
            ===================================================== */
 
         function CTA() {
@@ -558,30 +554,6 @@
                     },
                     "Explorar productos"
                 )
-            );
-        }
-
-
-        /* =====================================================
-           MAIN
-           ===================================================== */
-
-        function Main() {
-
-            return h(
-                Box,
-                {
-                    maxW: "7xl",
-                    mx: "auto",
-                    px: 6,
-                    py: 16
-                },
-
-                h(ProductosDestacados),
-
-                h(Beneficios),
-
-                h(CTA)
             );
         }
 
@@ -683,6 +655,30 @@
                         "© 2026 TechClub. Todos los derechos reservados."
                     )
                 )
+            );
+        }
+
+        
+        /* =====================================================
+           MAIN
+           ===================================================== */
+
+        function Main() {
+
+            return h(
+                Box,
+                {
+                    maxW: "7xl",
+                    mx: "auto",
+                    px: 6,
+                    py: 16
+                },
+
+                h(ProductosDestacados),
+
+                h(Beneficios),
+
+                h(CTA)
             );
         }
 

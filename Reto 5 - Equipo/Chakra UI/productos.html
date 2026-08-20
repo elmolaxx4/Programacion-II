@@ -157,7 +157,7 @@
            PRODUCT CARD
            ===================================================== */
 
-        function ProductCard({ image, title, description, price }) {
+        function ProductCard({ image, title, description, price, link }) {
 
             return h(
                 Box,
@@ -225,12 +225,15 @@
                     h(
                         Button,
                         {
+                            as: link ? "a" : "button",
+                            href: link,
                             bg: "#0284c7",
                             color: "white",
                             size: "md",
                             mt: "auto",
                             _hover: {
-                                bg: "#0369a1"
+                                bg: "#0369a1",
+                                textDecoration: "none"
                             }
                         },
                         "Comprar"
@@ -311,7 +314,8 @@
                         image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800",
                         title: "iPhone 13 PRO",
                         description: "Pantalla AMOLED, cámara avanzada y gran rendimiento.",
-                        price: "$499.999"
+                        price: "$499.999",
+                        link: "detalle_producto.html"
                     }),
 
                     h(ProductCard, {
